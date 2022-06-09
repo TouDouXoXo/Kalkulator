@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap'); /* zaimportowanie czcionki */ /* wygląd i rozmiar kalkulatora */
+
+*, *::before, *::after { /* Ogulny styl dla wszystkich elementów */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;                     
+    font-size: 22px;
+    font-weight: 500;
+    color: white;
+  }
+  body { /* element odpowiadający za tło naszej strony z kalkulatorem */
+    padding: 0; /* Padding służy do tworzenia przestrzeni wokół zawartości elementu, wewnątrz dowolnych zdefiniowanych granic */
+    margin: 0; /* Marginesy służą do tworzenia przestrzeni wokół elementów, poza zdefiniowanymi granicami. w skrucie margines */
+    background: #3879b3; /* kolor tła */
+  }
+  
+  .kalkulator { /* odpowiada za wielkość ,kolor ,wygląd ,ułozenie kalkulatora */
+    margin: 25px;
+    display: grid;
+    justify-content: center; /* odpowiada za wypośrodkowanie pionowe (y) */
+    align-content: center; /* odpowiada za wypośrodkowanie poziome (x) */
+    min-height: 70vh;
+    grid-template-columns: repeat(5, 80px); /* odpowiada za kolumny */
+    grid-template-rows: minmax(120px, auto) repeat(5, 80px); /* odpowiada za wiersze */
+  }
+  button { /* przycisk tak o */
+    cursor: pointer; /* msły zabieg stylistyczny w postaci zamiany ikony kursora po najechaniu na przycisk*/
+    border: 1px solid #534a6b;
+    outline: none;
+    background: #272630;
+  }
+  button:hover, button:focus {
+    background: rgba(36, 36, 35, .95);
+  }
+  .wynik { /* ta sekcia odpowiada za element kalkulatora ktury wyśfietla liczbyi wyniki */
+    grid-column: 1 / -1;
+    background-color: #333533;
+    display: flex; /*dzięki flex morzna zmieścić na tablicy wyniku 2 linijki z rużnymi wynikami */
+    flex-direction: column; /* kolumna pod kolumną :) */
+    align-items: flex-end; /* doruwnywanie do prawej strony */
+    justify-content: space-between; /* odstęp miedzy kolumnami :) */
+    padding: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+    box-shadow: 0px 4px 25px -10px rgba(0,0,0,0.75); /* dekoracia przycisków w posataci "gdy najedziesz na przyciszk podśfietla się lekim cieniem" */
+  }
+  .poprzednie-dzialanie { /* odpowiada za wygląd poprzedniego wyniku */
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .8)
+  }
+  .aktualne-dzialanie { /* odpowiada za wygląd aktualnego wyniku */
+    font-size: 30px;
+  }
+  .col-dwa {
+    grid-column: span 2;
+  }
+  .row-dwa {
+    grid-row: span 2;
+  }
